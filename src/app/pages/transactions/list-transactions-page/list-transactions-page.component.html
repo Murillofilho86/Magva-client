@@ -1,0 +1,42 @@
+<div class="uk-container">
+  <nav class="uk-navbar-container" uk-navbar>
+    <div class="uk-navbar-right">
+      <ul class="uk-navbar-nav">
+        <li class="uk-active">
+            <a [routerLink]="['/create-transactions']" uk-toggle>
+                <span class="uk-icon uk-margin-small-right" uk-icon="icon: plus"></span>
+                Adicionar
+              </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<div class="uk-container">
+  <table class="uk-table uk-table-middle uk-table-divider uk-table-hover">
+    <thead>
+      <tr>
+        <th class="uk-width-small">Cartão</th>
+        <th>Nome</th>
+        <th>Valor</th>
+        <th>Data</th>
+        <th>Tipo</th>
+        <th>Parcelas</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let transaction of transactions$">
+      <tr>
+        <td>{{transaction}}</td>
+        <td>{{transaction}}</td>
+        <td>{{transaction}}</td>
+        <td>{{transaction | date: 'dd/MM/yyyy'}}</td>
+        <td>
+         
+        </td>
+        <td><button class="uk-button uk-button-default" type="button" 
+            uk-icon="trash"></button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
