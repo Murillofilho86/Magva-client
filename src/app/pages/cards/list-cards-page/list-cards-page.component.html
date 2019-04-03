@@ -1,0 +1,40 @@
+<div class="uk-container">
+  <nav class="uk-navbar-container" uk-navbar>
+    <div class="uk-navbar-right">
+      <ul class="uk-navbar-nav">
+        <li class="uk-active">
+          <a [routerLink]="['/card']" uk-toggle>
+            <span class="uk-icon uk-margin-small-right" uk-icon="icon: plus"></span>
+            Adicionar
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+<div class="uk-container">
+  <div class="uk-grid uk-margin-small-top">
+    <div class="uk-width-1-2 uk-margin-small-bottom">
+      <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+        <div class="uk-card-media-left uk-cover-container">
+          <img src="https://picsum.photos/200/300/?random" alt="" uk-cover>
+          <canvas width="600" height="400"></canvas>
+        </div>
+        <div>
+          <div class="uk-card-body">
+            <h3 class="uk-card-title">{{ card.cardNumber }}</h3>
+            <p>Validade: {{ card.validate }}</p>
+            <p>Saldo: {{ card.balance }}</p>
+            <p>Tipo do cartão: {{ card.cardModel }}</p>
+
+            <button type="button" class="uk-icon uk-button uk-button-default" uk-icon="trash"></button>
+            <app-edit-card-page [card]="card"></app-edit-card-page>
+            <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
+              <label><input class="uk-checkbox uk-card-media-right" type="checkbox">Desabilitar</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

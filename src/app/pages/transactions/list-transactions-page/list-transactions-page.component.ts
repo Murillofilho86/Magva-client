@@ -9,6 +9,7 @@ import { Transaction } from 'src/app/shared/models/transaction';
 })
 export class ListTransactionsPageComponent implements OnInit {
   public transactions$: Observable<Transaction[]>
+  
   constructor() { 
   }
 
