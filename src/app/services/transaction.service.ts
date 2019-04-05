@@ -13,4 +13,20 @@ export class TransactionService {
   public getTransactions(){
     return this.http.get<Transaction[]>(environment.URL_API + '/v1/transactions')
   } 
+
+  public deposit(card: Transaction) {
+    return this.http.post<Transaction>(environment.URL_API + '/v1/transactions/deposit', card);
+  }
+
+  public withdrawal(card: Transaction) {
+    return this.http.post<Transaction>(environment.URL_API + '/v1/transactions/withdrawal', card);
+  }
+ 
+  public getById(id: string) {
+    return this.http.get<Transaction>(`${environment.URL_API}/v1/transactions/${id}`)
+  }
+
+  public delete(id: string) {
+    return this.http.delete<Transaction>(`${environment.URL_API}/v1/transactions/${id}`)
+  }
 }

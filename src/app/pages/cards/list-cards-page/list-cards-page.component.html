@@ -14,7 +14,8 @@
 </div>
 <div class="uk-container">
   <div class="uk-grid uk-margin-small-top">
-    <div class="uk-width-1-2 uk-margin-small-bottom">
+    <div class="uk-width-1-2 uk-margin-small-bottom"
+    *ngFor="let card of _cards$ | async">
       <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
         <div class="uk-card-media-left uk-cover-container">
           <img src="https://picsum.photos/200/300/?random" alt="" uk-cover>
@@ -22,10 +23,10 @@
         </div>
         <div>
           <div class="uk-card-body">
-            <h3 class="uk-card-title">{{ card.cardNumber }}</h3>
-            <p>Validade: {{ card.validate }}</p>
+            <h3 class="uk-card-title">{{ card.number }}</h3>
+            <p>Validade: {{ card.expirationDate }}</p>
             <p>Saldo: {{ card.balance }}</p>
-            <p>Tipo do cartão: {{ card.cardModel }}</p>
+            <p>Tipo do cartão: {{ card.cardBrand }}</p>
 
             <button type="button" class="uk-icon uk-button uk-button-default" uk-icon="trash"></button>
             <app-edit-card-page [card]="card"></app-edit-card-page>

@@ -7,25 +7,24 @@ import { Observable } from 'rxjs';
 @Injectable({
     providedIn: 'root'
 })
-export class TransactionService { 
-    
+export class CustomerService {
+
 
     constructor(private http: HttpClient) {
-             
     }
 
-    register(customer: Customer) : Observable<Customer> {
-        return this.http.post<Customer>(environment.URL_API + '/v1/customers', customer);
+    public register(customer: Customer) {
+            return this.http.post<Customer>(environment.URL_API + '/v1/customers', customer);
     }
 
-    getAll(): Observable<Customer[]>{
+    public getAll() {
         return this.http.get<Customer[]>(environment.URL_API + '/v1/customers')
     }
-    getById(id: string): Observable<Customer> {
+    public getById(id: string) {
         return this.http.get<Customer>(`${environment.URL_API}/v1/customers/${id}`)
     }
 
-    delete(id: string): Observable<Customer>{
+    public delete(id: string) {
         return this.http.delete<Customer>(`${environment.URL_API}/v1/customers/${id}`)
     }
 }

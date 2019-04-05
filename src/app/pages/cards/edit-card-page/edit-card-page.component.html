@@ -15,30 +15,37 @@
                 <div class="uk-margin">
                     <label class="uk-form-label" for="form-stacked-text">Número</label>
                     <div class="uk-form-controls">
-                        <input class="uk-input" formControlName="Code" [(ngModel)]="_card.cardNumber"
+                        <input class="uk-input" formControlName="number" [(ngModel)]="_card.number"
                             id="form-stacked-text" type="text" placeholder="Número do cartão">
                     </div>
                 </div>
                 <div class="uk-margin">
-                    <label class="uk-form-label" for="form-stacked-text">Saldo</label>
+                    <label class="uk-form-label" for="form-stacked-text">Código de segurança</label>
                     <div class="uk-form-controls">
-                        <input class="uk-input" formControlName="Model" [(ngModel)]="_card.balance"
-                            id="form-stacked-text" type="text" placeholder="Saldo">
+                        <input class="uk-input" formControlName="securityCode" [(ngModel)]="_card.securityCode"
+                            id="form-stacked-text" type="text" placeholder="CVV">
                     </div>
                 </div>
                 <div class="uk-margin">
                     <label class="uk-form-label" for="form-stacked-text">Validade</label>
                     <div class="uk-form-controls">
-                        <input class="uk-input" formControlName="PassengersQuantity"
-                            [(ngModel)]="_card.validate" id="form-stacked-text" type="date"
-                            placeholder="Validade">
+                        <input class="uk-input" formControlName="expirationDate"
+                            [(ngModel)]="_card.expirationDate" 
+                            id="form-stacked-text" type="date" placeholder="Validade">
+                    </div>
+                </div>
+                <div class="uk-margin">
+                    <label class="uk-form-label" for="form-stacked-text">Saldo</label>
+                    <div class="uk-form-controls">
+                        <input class="uk-input" formControlName="balance" [(ngModel)]="_card.balance"
+                            id="form-stacked-text" type="text" placeholder="Saldo" readonly>
                     </div>
                 </div>
             </form>
         </div>
         <div class="uk-modal-footer uk-text-right">
             <button class="uk-button uk-button-default uk-modal-close">Cancelar</button>
-            <button class="uk-button uk-button-primary"  type="submit" uk-icon="icon: save">
+            <button class="uk-button uk-button-primary" type="submit" uk-icon="icon: save">
                 Salvar</button>
         </div>
     </div>

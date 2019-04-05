@@ -17,14 +17,15 @@ import { EditCardPageComponent } from './cards/edit-card-page/edit-card-page.com
     CreateTransactionsPageComponent,
     ListTransactionsPageComponent,
     ListCardsPageComponent,
-    EditCardPageComponent
+    EditCardPageComponent,
+    
   ],
   imports: [
     CommonModule,
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
-    CurrencyMaskModule
+    CurrencyMaskModule,
   ],
 
   exports: [

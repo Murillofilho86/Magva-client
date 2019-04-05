@@ -1,24 +1,34 @@
 <div class="uk-flex-center" uk-grid>
-  <div class="uk-width-1-3@m">
+  <div class="uk-width-1-2@m">
     <p class="uk-width-center uk-margin-large-top uk-margin-medium-bottom">
       <span class="uk-icon" uk-icon="icon: logo-color-dark; radio: 0.7"></span>
     </p>
 
-    <form [formGroup]="customerForm">
+    <form [formGroup]="customerForm" (submit)="registerCustomer()">
       <div class="uk-card uk-card-primary uk-card-body uk-box-shadow-small">
         <h3>Cadastre-se</h3>
         <div class="uk-margin">
-          <input class="uk-input uk-form-large" type="text" placeholder="Nome">
+          <input class="uk-input uk-form-large" type="text" placeholder="Nome"
+          formControlName="name">
+
         </div>
         <div class="uk-margin">
-          <input class="uk-input uk-form-large" type="text" placeholder="CPF">
+          <input class="uk-input uk-form-large" type="text" placeholder="CPF"
+          formControlName="document">
+   
         </div>
         <div class="uk-margin">
-          <input class="uk-input uk-form-large" type="email" placeholder="E-mail">
+          <input class="uk-input uk-form-large" type="email" placeholder="E-mail"
+          formControlName="email">
+ 
+        </div>
+        <div class="uk-margin">
+          <input class="uk-input uk-form-large" type="text" placeholder="Telefone"
+          formControlName="phone">
         </div>
        
         <div class="uk-margin uk-text-right">
-          <a href="/" class="uk-button uk-button-default">Cadastrar </a>
+          <button type="submit" class="uk-button uk-button-default" [disabled]="!customerForm.valid" >Cadastrar</button> 
         </div>
       </div>
     </form>
