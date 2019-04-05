@@ -24,15 +24,14 @@
         <div>
           <div class="uk-card-body">
             <h3 class="uk-card-title">{{ card.number }}</h3>
-            <p>Validade: {{ card.expirationDate }}</p>
-            <p>Saldo: {{ card.balance }}</p>
+            <p>Validade: {{ card.expirationDate}}</p>
+            <p>Saldo: R$ {{ card.balance  }}</p>
             <p>Tipo do cartão: {{ card.cardBrand }}</p>
+        
 
-            <button type="button" class="uk-icon uk-button uk-button-default" uk-icon="trash"></button>
+            <button type="button" class="uk-icon uk-button uk-button-default" (click)="deleteCard(card.id)" uk-icon="trash"></button>
             <app-edit-card-page [card]="card"></app-edit-card-page>
-            <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
-              <label><input class="uk-checkbox uk-card-media-right" type="checkbox">Desabilitar</label>
-            </div>
+      
           </div>
         </div>
       </div>

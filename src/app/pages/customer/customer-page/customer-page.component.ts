@@ -13,25 +13,23 @@ import { Router } from '@angular/router';
 export class CustomerPageComponent implements OnInit {
 
   public _customers$: Observable<Customer[]>
-
-  customerForm: FormGroup;
-
+  customer: Customer;
+  customerForm: FormGroup; 
   constructor(
-    private formBuilder: FormBuilder,
+    private _formBuilder: FormBuilder,
     private _service: CustomerService,
     private _router: Router
   ) { }
 
   ngOnInit() {
-
-    this.customerForm = this.formBuilder.group({
+    this.customerForm = this._formBuilder.group({
       'name': [null, Validators.required],
       'document': [null, Validators.required],
       'email': [null, Validators.required],
       'phone': [null, Validators.required]
     });
   }
-  
+
   registerCustomer() {
 
     const customer = this.customerForm.getRawValue() as Customer

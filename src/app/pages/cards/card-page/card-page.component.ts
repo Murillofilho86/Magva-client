@@ -36,12 +36,14 @@ export class CardPageComponent implements OnInit {
     this._service.add(card)
     .subscribe(
       () => {
-        this._router.navigate(['/cards/list-card']);
+       
       },
       err => {
         'Erro'
       }
     );
+
+    this._router.navigate(['/cards/list-card']);
   }
 
 }

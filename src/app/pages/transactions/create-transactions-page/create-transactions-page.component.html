@@ -1,30 +1,41 @@
 <div class="uk-flex-center" uk-grid>
-  <div class="uk-width-1-3@m">
+  <div class="uk-width-1-2@m">
     <p class="uk-width-center uk-margin-large-top uk-margin-medium-bottom">
       <span class="uk-icon" uk-icon="icon: logo-color-dark; radio: 0.7"></span>
     </p>
 
-    <div class="uk-card uk-card-primary uk-card-body uk-box-shadow-small">
-      <h3>Nova transação</h3>
-      <div class="uk-margin">
-        <input class="uk-input uk-form-large" type="text" placeholder="Valor">
-      </div>
-      <div class="uk-form-select uk-margin" data-uk-form-select>
+    <form [formGroup]="transactionForm" (submit)="insertTransaction()">
+      <div class="uk-card uk-card-primary uk-card-body uk-box-shadow-small">
+        <h3>Nova transação</h3>
+        <div class="uk-margin">
+          <div class="uk-margin">
+            <input class="uk-input uk-form-large" type="text" placeholder="CPF" formControlName="document">
+          </div>
+          <input class="uk-input uk-form-large" type="text" placeholder="Número do cartão" formControlName="number">
+        </div>
+        <div class="uk-margin">
+          <input class="uk-input uk-form-large" type="text" placeholder="CVV" formControlName="securityCode">
+        </div>
+        <div class="uk-margin">
+          <input class="uk-input uk-form-large" type="text" placeholder="Valor" formControlName="amount">
+        </div>
+        <div class="uk-form-select uk-margin" data-uk-form-select>
           <span></span>
-          <select class="uk-input uk-form-large">
+          <select class="uk-input uk-form-large" formControlName="type">
             <span></span>
-              <option value="">Tipo de operação</option>
-              <option value="1">Débito</option>
-              <option value="2">Crédito</option>
+            <option value="1">Débito</option>
+            <option value="2">Crédito</option>
           </select>
+        </div>
+        <div class="uk-margin">
+          <input class="uk-input uk-form-large" type="number" placeholder="Parcelas"
+            formControlName="numberInstallments">
+        </div>
+
+        <div class="uk-margin uk-text-right">
+          <button type="submit" class="uk-button uk-button-default">Cadastrar</button>
+        </div>
       </div>
-      <div class="uk-margin">
-        <input class="uk-input uk-form-large" type="number" placeholder="parcelas">
-      </div>
- 
-      <div class="uk-margin uk-text-right">
-        <a href="/" class="uk-button uk-button-default">Cadastrar</a>
-      </div>
-    </div>
+    </form>
   </div>
 </div>

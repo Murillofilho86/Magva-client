@@ -3,10 +3,10 @@
     <div class="uk-navbar-right">
       <ul class="uk-navbar-nav">
         <li class="uk-active">
-            <a [routerLink]="['/create-transactions']" uk-toggle>
-                <span class="uk-icon uk-margin-small-right" uk-icon="icon: plus"></span>
-                Adicionar
-              </a>
+          <a [routerLink]="['/create-transactions']" uk-toggle>
+            <span class="uk-icon uk-margin-small-right" uk-icon="icon: plus"></span>
+            Adicionar
+          </a>
         </li>
       </ul>
     </div>
@@ -18,24 +18,22 @@
     <thead>
       <tr>
         <th class="uk-width-small">Cartão</th>
-        <th>Nome</th>
+        <th class="uk-width-large">Nome</th>
         <th>Valor</th>
         <th>Data</th>
         <th>Tipo</th>
         <th>Parcelas</th>
       </tr>
     </thead>
-    <tbody *ngFor="let transaction of transactions$">
+    <tbody *ngFor="let transaction of transactions$ | async">
       <tr>
-        <td>{{transaction}}</td>
-        <td>{{transaction}}</td>
-        <td>{{transaction}}</td>
-        <td>{{transaction | date: 'dd/MM/yyyy'}}</td>
-        <td>
-         
-        </td>
-        <td><button class="uk-button uk-button-default" type="button" 
-            uk-icon="trash"></button></td>
+        <td>{{transaction.number}}</td>
+        <td>{{transaction.cardholderName}}</td>
+        <td>{{transaction.amount | currency: 'BRL'}}</td>
+        <td>{{transaction.dateTransaction | date: 'dd/MM/yyyy'}}</td>
+        <td>{{transaction.type }}</td>
+        <td>{{transaction.numberInstallments}}X</td>
+        <td><button class="uk-button uk-button-default" type="button" uk-icon="trash"></button></td>
       </tr>
     </tbody>
   </table>

@@ -4,13 +4,11 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ControlMessagesComponent } from './components/control-message/control-message.component';
-import { DatePipe } from './pipes/date-pipe.pipe';
 
 @NgModule({
   declarations: [
       NavbarComponent,
       ControlMessagesComponent,
-      DatePipe    
   ],
   imports: [
     CommonModule,
@@ -20,7 +18,6 @@ import { DatePipe } from './pipes/date-pipe.pipe';
   exports:[
     NavbarComponent,
     ControlMessagesComponent,
-    DatePipe    
   ]
 })
 export class SharedModule { }

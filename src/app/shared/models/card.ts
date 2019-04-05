@@ -1,13 +1,12 @@
 export interface Card {
-    _id: string,
+    id: string,
     number: string,
-    expirationDate: Date,
-    cardModel: number,
+    expirationDate: string,
     password: string,
     balance: number,
     active: boolean,
     securityCode: string
     type: boolean,
-    cardholderName: string,
+    cardholderName: number,
     cardBrand: string
 }

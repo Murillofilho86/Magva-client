@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Card } from 'src/app/shared/models/card';
 import { CardService } from 'src/app/services/card.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-cards-page',
@@ -14,11 +15,22 @@ export class ListCardsPageComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private _service: CardService
+    private _service: CardService,
+    private _router: Router
   ) { }
 
   ngOnInit() {
     this._cards$ = this._service.getAll();
+    console.log(this._cards$)
   }
 
+  deleteCard(id: string){
+     this._service.delete(id)
+     .subscribe(() => {
+       this._router.navigate['/cards/list-card']
+     },
+     err => {
+       'err'
+     });
+  }
 }

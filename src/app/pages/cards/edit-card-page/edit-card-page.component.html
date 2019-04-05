@@ -12,6 +12,8 @@
         </div>
         <div class="uk-modal-body">
             <form [formGroup]="editForm">
+                    <label><input class="uk-checkbox uk-card-media-right" 
+                        formControlName="active" type="checkbox">Desabilitar</label>
                 <div class="uk-margin">
                     <label class="uk-form-label" for="form-stacked-text">Número</label>
                     <div class="uk-form-controls">
@@ -30,8 +32,8 @@
                     <label class="uk-form-label" for="form-stacked-text">Validade</label>
                     <div class="uk-form-controls">
                         <input class="uk-input" formControlName="expirationDate"
-                            [(ngModel)]="_card.expirationDate" 
-                            id="form-stacked-text" type="date" placeholder="Validade">
+                            [(ngModel)]="_card.expirationDate"
+                            id="form-stacked-text" type="text" placeholder="Validade">
                     </div>
                 </div>
                 <div class="uk-margin">
@@ -43,10 +45,13 @@
                 </div>
             </form>
         </div>
+  
         <div class="uk-modal-footer uk-text-right">
+             
             <button class="uk-button uk-button-default uk-modal-close">Cancelar</button>
             <button class="uk-button uk-button-primary" type="submit" uk-icon="icon: save">
                 Salvar</button>
         </div>
+     
     </div>
 </div>

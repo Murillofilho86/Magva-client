@@ -14,12 +14,12 @@ export class TransactionService {
     return this.http.get<Transaction[]>(environment.URL_API + '/v1/transactions')
   } 
 
-  public deposit(card: Transaction) {
-    return this.http.post<Transaction>(environment.URL_API + '/v1/transactions/deposit', card);
+  public deposit(deposit: Transaction) {
+    return this.http.post<Transaction>(environment.URL_API + '/v1/transactions/deposit', deposit);
   }
 
-  public withdrawal(card: Transaction) {
-    return this.http.post<Transaction>(environment.URL_API + '/v1/transactions/withdrawal', card);
+  public withdrawal(withdrawal: Transaction) {
+    return this.http.post<Transaction>(environment.URL_API + '/v1/transactions/withdrawal', withdrawal);
   }
  
   public getById(id: string) {
