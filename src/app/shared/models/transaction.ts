@@ -1,3 +1,5 @@
+import { Message } from '@angular/compiler/src/i18n/i18n_ast';
+
 export interface Transaction {
 
      id: string,
@@ -5,9 +7,9 @@ export interface Transaction {
      amount: number,
      numberInstallments: number,
      dateTransaction: Date
-     cardholderName: string,
      number: string,
      securityCode: string,
-     type: boolean
+     type: boolean,
+     message: string
 
 }

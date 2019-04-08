@@ -3,21 +3,23 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { ControlMessagesComponent } from './components/control-message/control-message.component';
+import { AlertComponent } from './components/alert/alert.component';
 
 @NgModule({
   declarations: [
-      NavbarComponent,
-      ControlMessagesComponent,
+    NavbarComponent,
+    AlertComponent
   ],
   imports: [
     CommonModule,
-    RouterModule ,
-    ReactiveFormsModule 
+    RouterModule,
+    ReactiveFormsModule,
   ],
-  exports:[
+  exports: [
     NavbarComponent,
-    ControlMessagesComponent,
+    AlertComponent
+  ],
+  providers: [
   ]
 })
 export class SharedModule { }

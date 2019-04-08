@@ -8,5 +8,6 @@ export interface Card {
     securityCode: string
     type: boolean,
     cardholderName: number,
-    cardBrand: string
+    cardBrand: string,
+    document: string
 }

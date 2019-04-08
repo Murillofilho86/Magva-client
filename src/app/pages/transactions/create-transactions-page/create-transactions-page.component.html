@@ -3,14 +3,14 @@
     <p class="uk-width-center uk-margin-large-top uk-margin-medium-bottom">
       <span class="uk-icon" uk-icon="icon: logo-color-dark; radio: 0.7"></span>
     </p>
-
+    <div class="fixed-top">
+      <app-alert></app-alert>
+    </div>
     <form [formGroup]="transactionForm" (submit)="insertTransaction()">
       <div class="uk-card uk-card-primary uk-card-body uk-box-shadow-small">
         <h3>Nova transação</h3>
         <div class="uk-margin">
-          <div class="uk-margin">
-            <input class="uk-input uk-form-large" type="text" placeholder="CPF" formControlName="document">
-          </div>
+
           <input class="uk-input uk-form-large" type="text" placeholder="Número do cartão" formControlName="number">
         </div>
         <div class="uk-margin">

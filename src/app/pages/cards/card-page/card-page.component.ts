@@ -22,17 +22,22 @@ export class CardPageComponent implements OnInit {
   ngOnInit() {
     this.cardForm = this.formBuilder.group({
       'cardholderName': [null, Validators.required],
+      'document': [null, Validators.required],
       'number': [null, Validators.required],
       'securityCode': [null, [Validators.required, Validators.maxLength(5)]],
       'expirationDate': [null, Validators.required],
-      'type': [null, Validators.required],
+      'type': [1, Validators.required],
       'password': [null],
-      'cardBrand': [null, Validators.required]
+      'cardBrand': [null, Validators.required],
+      'active': [1],
+      'balance': [0],
+      'hasPassword': [0]
     });
   }
 
   insertCard() {
     const card = this.cardForm.getRawValue() as Card;
+console.log(card);
     this._service.add(card)
     .subscribe(
       () => {

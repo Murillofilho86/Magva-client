@@ -1,7 +1,8 @@
+import { AlertComponent } from './shared/components/alert/alert.component';
 import { SharedModule } from './shared/shared.module';
 import { PagesModule } from './pages/pages.module';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CurrencyMaskModule } from "ng2-currency-mask";
 import { AppRoutingModule } from './app-routing.module';
 import { FramePageComponent } from './pages/master/frame.page';
@@ -13,6 +14,8 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     AppComponent,
     FramePageComponent
+  
+    
   ],
   imports: [
     BrowserModule,
