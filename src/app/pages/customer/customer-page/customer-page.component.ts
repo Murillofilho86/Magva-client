@@ -14,7 +14,9 @@ export class CustomerPageComponent implements OnInit {
 
   public _customers$: Observable<Customer[]>
   customer: Customer;
-  customerForm: FormGroup; 
+  customerForm: FormGroup;
+  message: string;
+
   constructor(
     private _formBuilder: FormBuilder,
     private _service: CustomerService,
@@ -35,14 +37,27 @@ export class CustomerPageComponent implements OnInit {
     const customer = this.customerForm.getRawValue() as Customer
     this._service.register(customer)
       .subscribe(
-        () => {
-          this._router.navigate(['/']);
+        (data) => {
+
+          alert(this.getMessage(data.message));
+          this._router.navigate(['']);
         },
         err => {
           'Erro'
         }
       )
 
+  }
+
+  private getMessage(msg: string): string {
+    switch (msg) {
+
+      case 'CREATE_SUCCESS': this.message = 'Registro inserido com sucesso.';
+        break;
+      case 'DOCUMENT_IS_NOT_VALID': this.message = 'Documento inválido';
+        break;
+    }
+    return this.message;
   }
 
 }

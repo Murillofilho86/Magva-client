@@ -11,7 +11,7 @@ export class Messages {
                 break;
             case 'UPDATE_SUCCESS': this.message = 'Registro atualizado com sucesso.';
                 break;
-            case 'CREATE_SUCCESS': this.message = 'Registro atualizado com sucesso.';
+            case 'CREATE_SUCCESS': this.message = 'Registro inserido com sucesso.';
                 break;
             case 'PASSWORD_IS_NOT_VALID': this.message = 'Erro no tamanho da senha informada';
                 break;

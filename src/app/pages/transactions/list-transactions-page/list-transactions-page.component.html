@@ -15,7 +15,7 @@
 
 <div class="uk-container">
   <table class="uk-table uk-table-middle uk-table-divider uk-table-hover" 
-  *ngIf="(transactions$ | async) as transations; else loadingNotError">
+  *ngIf="(transactions$ | async) as transations">
     <thead>
       <tr>
         <th class="uk-width-large">Nome</th>
@@ -38,7 +38,7 @@
     </tbody>
   </table>
 
-
+<!-- 
   <ng-template #loadingNotError>
     <div *ngIf="error$ | async; else loadingNotError">
       Error ao carregar transações
@@ -46,5 +46,5 @@
     <ng-template>
       <span>Carregando transações...</span>
     </ng-template>
-  </ng-template>
+  </ng-template> -->
 </div>

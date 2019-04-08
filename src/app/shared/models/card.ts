@@ -9,5 +9,6 @@ export interface Card {
     type: boolean,
     cardholderName: number,
     cardBrand: string,
-    document: string
+    document: string,
+    message: string;
 }

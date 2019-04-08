@@ -27,7 +27,8 @@ export class ListCardsPageComponent implements OnInit {
   deleteCard(id: string){
      this._service.delete(id)
      .subscribe(() => {
-       this._router.navigate['/cards/list-card']
+      alert('Excluído com sucesso!');
+       this._router.navigate['']
      },
      err => {
        'err'

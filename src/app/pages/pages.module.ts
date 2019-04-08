@@ -1,3 +1,5 @@
+import { SharedModule } from './../shared/shared.module';
+import { AlertComponent } from './../shared/components/alert/alert.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CreateTransactionsPageComponent } from './transactions/create-transactions-page/create-transactions-page.component';
@@ -17,8 +19,7 @@ import { EditCardPageComponent } from './cards/edit-card-page/edit-card-page.com
     CreateTransactionsPageComponent,
     ListTransactionsPageComponent,
     ListCardsPageComponent,
-    EditCardPageComponent,
-    
+    EditCardPageComponent
   ],
   imports: [
     CommonModule,
@@ -26,6 +27,7 @@ import { EditCardPageComponent } from './cards/edit-card-page/edit-card-page.com
     FormsModule,
     ReactiveFormsModule,
     CurrencyMaskModule,
+    SharedModule
   ],
 
   exports: [

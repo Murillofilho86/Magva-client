@@ -3,5 +3,6 @@ export interface Customer {
     name: string,
     document: string,
     email: string,
-    phone: string
+    phone: string,
+    message: string;
 }
